@@ -5,37 +5,29 @@ public class HCF {
      * Find the HCF of two numbers
      */
     public static void main(String[] args) {
+        
         //Declarations & Scanner
-        int number1, number2, calculateFirstInteger, calculateSecondInteger, firstIntegerMultiples, secondIntegerMultiples;
+        short numberOne, numberTwo;
+        int HCF = 0;
         Scanner input = new Scanner(System.in);
+        
+        //Input the first number
+        System.out.print("Enter the first integer: ");
+        numberOne = input.nextShort();
+        //Input the second number
+        System.out.print("Enter the second integer: ");
+        numberTwo = input.nextShort();
 
-        //Instructions
-        System.out.println("This program will output the Highest Common Factor between two numbers");
-        System.out.print("Input the first integer: ");
-        number1 = input.nextInt();
-        System.out.print("Input the second integer: ");
-        number2 = input.nextInt();
-
-
-        System.out.println("The first 12 multiples of " + number1);
-        //Calculate first Integer
-        calculateFirstInteger = number1 * number1;
-        //For Loop for First Integer & Output
-        for (calculateFirstInteger = 0; calculateFirstInteger <= 12; calculateFirstInteger++){
-            firstIntegerMultiples = number1 * calculateFirstInteger;
-            System.out.print(firstIntegerMultiples + " ");
-        }
-        System.out.println();
-        System.out.println("The first 12 multiples of " + number2);
-        //Calculate second Integer
-        calculateSecondInteger = number2 * number2;
-        //For Loop: Second Integer
-        for (calculateSecondInteger = 0; calculateSecondInteger <=12; calculateSecondInteger++){
-            secondIntegerMultiples = number2 * calculateSecondInteger;
-            System.out.print(secondIntegerMultiples + " ");
-        }
-
-
-
-    }
+        //Display the factors of integer 1 and integer 2
+        for (int counter = 1; counter <= numberOne ||
+                counter <= numberTwo; counter++) {
+            //Check if the number from the counter is divisible by integer 1 and Integer 2
+            if (numberOne % counter == 0 && numberTwo % counter == 0)
+                //update the HCF to the number divisible by both integer 1 and integer 2
+                HCF = counter;
+            }
+        //Output
+            System.out.println("The highest common factor of " + numberOne + " and " + numberTwo +
+                    " is " + HCF);
+   }
 }
